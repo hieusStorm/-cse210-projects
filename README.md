@@ -1,5 +1,5 @@
 # cse210-ww-student-template
-Hyrum Wines student repo
+Hyrum Wines student
 
 This repository contains the starter code for many different projects. They are arranged as follows:
 
