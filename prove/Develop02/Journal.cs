@@ -32,6 +32,7 @@ public class Journal
 
     public void LoadFromFile(string fileName)
     {
+        _journalEntries.Clear();
         string[] lines = System.IO.File.ReadAllLines($"{fileName}.json");
         foreach (string line in lines)
         {
