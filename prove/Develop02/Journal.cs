@@ -22,14 +22,23 @@ public class Journal
         {
             foreach (Entry journalEntry in _journalEntries)
             {
-                savedJournal.WriteLine(journalEntry._date);
-                savedJournal.WriteLine(journalEntry._prompt);
-                savedJournal.WriteLine(journalEntry._response);
+                savedJournal.WriteLine($"{journalEntry._date}|{journalEntry._prompt}|{journalEntry._response}");
             }
         }
     }
     public void LoadFromFile(string fileName)
     {
-        Console.WriteLine(fileName);
+        string[] lines = System.IO.File.ReadAllLines(fileName);
+        foreach (string line in lines)
+        {
+            Entry journalEntry = new Entry();
+            string[] parts = line.Split("|");
+
+            journalEntry._date = parts[0];
+            journalEntry._prompt = parts[1];
+            journalEntry._response = parts[2];
+
+            AddEntry(journalEntry);
+        }
     }
 }
