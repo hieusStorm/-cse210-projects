@@ -1,15 +1,15 @@
 public class Entry
 {
-    public PromptGenerator _prompts = new PromptGenerator();
-    public string _prompt = "";
-    public string _response = "";
-    public string _date = DateTime.Now.ToString("MM/dd/yyyy");
+    public string _prompt {get; set;} = "";
+    public string _response {get; set;} = "";
+    public string _date {get; set;} = DateTime.Now.ToString("MM/dd/yyyy");
 
     public void Display()
     {
         if (_prompt == "")
         {
-            _prompt = _prompts.GetRandomPrompt();
+            PromptGenerator prompts = new PromptGenerator(); 
+            _prompt = prompts.GetRandomPrompt();
         }
 
         Console.WriteLine(_date);
