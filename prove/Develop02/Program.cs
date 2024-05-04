@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 
 class Program
 {
@@ -8,7 +9,7 @@ class Program
         Journal mainJournal = new Journal();
         // List<Entry> todaysEntries = new List<Entry>();
         Console.WriteLine("Welcome to the Journal program!");
-        
+
         do
         {
             Console.WriteLine("What would you like to do? (Please enter a number with the corresponding option)");

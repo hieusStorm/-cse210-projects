@@ -18,10 +18,18 @@ public class Journal
 
     public void SaveToFile(string fileName)
     {
-        // Save to a current file
+        using (StreamWriter savedJournal = new StreamWriter(fileName))
+        {
+            foreach (Entry journalEntry in _journalEntries)
+            {
+                savedJournal.WriteLine(journalEntry._date);
+                savedJournal.WriteLine(journalEntry._prompt);
+                savedJournal.WriteLine(journalEntry._response);
+            }
+        }
     }
     public void LoadFromFile(string fileName)
     {
-        // Load from a file
+        Console.WriteLine(fileName);
     }
 }
