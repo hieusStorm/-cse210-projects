@@ -1,3 +1,5 @@
+// To exceed the requirements of the project I made this project use JSON to save and load the journal entries
+
 using System;
 using System.IO;
 using System.Text.Json;
