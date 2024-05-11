@@ -8,8 +8,12 @@ public class Scripture
     // Constructors
     public Scripture(Reference scriptureReference, string text)
     {
-        Word textWord = new Word("text");
-        _text.Add(textWord);
+        string[] textWords = text.Split(" ");
+        foreach (string textWord in textWords)
+        {
+            Word word = new Word(textWord);
+            _text.Add(word);
+        }
         _scriptureReference = scriptureReference;
     }
 
@@ -17,12 +21,30 @@ public class Scripture
     public string GetDisplayText()
     {
         // Put display text together
-        return "True";
+        string text = $"{_scriptureReference.GetDisplayText()} ";
+        foreach (Word textWord in _text)
+        {
+            text = $"{text} {textWord}";
+        }
+        return text;
     }
 
     public void HideWords(int hideNumber)
     {
-        //Hide a certain number of words
+        Random wordPicker = new Random();
+
+        for (int i = 0; i < hideNumber; i++)
+        {
+            if (wordPicker.Next(1, 2) == 1)
+            {
+                _text[i].ToggleShow();
+            }
+        }
+    }
+
+    public int getLength()
+    {
+        return _text.Count();
     }
 
 }

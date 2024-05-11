@@ -10,7 +10,8 @@ public class Word
     }
 
     // Methods
-    public bool isShown() {
+    public bool isShown()
+    {
         return _show;
     }
 
@@ -26,7 +27,15 @@ public class Word
         }
     }
 
-    public string GetDisplayText() {
-        return _text;
+    public string GetDisplayText()
+    {
+        if (_show)
+        {
+            return _text;
+        }
+        else
+        {
+            return "____";
+        }
     }
 }
