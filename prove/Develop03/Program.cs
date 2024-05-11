@@ -9,7 +9,7 @@ class Program
         //Set up scripture to memorize
         Reference psalmsReference = new Reference("psalms", 23, 4);
         Scripture memorizeScripture = new Scripture(psalmsReference, "Yea, though I walk through the valley of the shadow of death, I will fear no evil: for thou art with me; thy rod and thy staff they comfort me.");
-
+        int hideNumberMax = memorizeScripture.getLength();
         //set up process to memorize the scripture
         do
         {
@@ -20,7 +20,7 @@ class Program
             //Hide some words
             hideNumber++;
             memorizeScripture.HideWords(hideNumber);
-        } while (response != "quit" || hideNumber > memorizeScripture.getLength());
+        } while (response != "quit" && memorizeScripture.getHiddenLength() < hideNumberMax);
 
     }
 }

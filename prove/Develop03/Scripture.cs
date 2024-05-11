@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 using Microsoft.VisualBasic;
 
 public class Scripture
@@ -31,13 +32,25 @@ public class Scripture
 
     public void HideWords(int hideNumber)
     {
+        List<Word> shownText = new List<Word>();
         Random wordPicker = new Random();
+        int maxWordIndex;
+
+        foreach (Word textWord in _text)
+        {
+            if (textWord.isShown())
+            {
+                shownText.Add(textWord);
+            }
+        }
+
+        maxWordIndex = shownText.Count;
 
         for (int i = 0; i < hideNumber; i++)
         {
-            if (wordPicker.Next(1, 2) == 1)
+            if (maxWordIndex > 0)
             {
-                _text[i].ToggleShow();
+                shownText[wordPicker.Next(0, maxWordIndex)].ToggleShow();
             }
         }
     }
@@ -45,6 +58,19 @@ public class Scripture
     public int getLength()
     {
         return _text.Count();
+    }
+
+    public int getHiddenLength() {
+        List<Word> hiddenText = new List<Word>();
+        foreach (Word textWord in _text) 
+        {
+            if (!textWord.isShown())
+            {
+                hiddenText.Add(textWord);
+            }
+        }
+
+        return hiddenText.Count();
     }
 
 }
