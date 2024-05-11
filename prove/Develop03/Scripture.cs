@@ -24,7 +24,7 @@ public class Scripture
         string text = $"{_scriptureReference.GetDisplayText()} ";
         foreach (Word textWord in _text)
         {
-            text = $"{text} {textWord}";
+            text = $"{text} {textWord.GetDisplayText()}";
         }
         return text;
     }
