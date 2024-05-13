@@ -60,9 +60,10 @@ public class Scripture
         return _text.Count();
     }
 
-    public int getHiddenLength() {
+    public int getHiddenLength()
+    {
         List<Word> hiddenText = new List<Word>();
-        foreach (Word textWord in _text) 
+        foreach (Word textWord in _text)
         {
             if (!textWord.isShown())
             {
