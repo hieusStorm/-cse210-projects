@@ -10,6 +10,7 @@ public class Activity
     //methods
     public void DisplayStartingMessage()
     {
+        Console.Clear();
         Console.WriteLine($"Welcome to the {_name} Activity");
         Console.WriteLine(_description);
         Console.WriteLine("In seconds how long would you like to do this activity?");
@@ -66,10 +67,6 @@ public class Activity
     protected void SetDescription(string description)
     {
         _description = description;
-    }
-    public void SetDuration(int duration)
-    {
-        _duration = duration;
     }
     //getters
     protected int GetDuration()
