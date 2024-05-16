@@ -17,15 +17,16 @@ public class Activity
         Console.Clear();
         Console.WriteLine("Get ready...");
         ShowSpinner(10);
+        Console.Clear();
     }
     public void DisplayEndingMessage()
     {
-        Console.Clear();
         Console.WriteLine("Well Done");
         ShowSpinner(5);
         Console.Clear();
         Console.WriteLine($"You have completed a {_duration} seconds {_name} Activity");
         ShowSpinner(10);
+        Console.Clear();
     }
     public void ShowSpinner(int seconds)
     {
