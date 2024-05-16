@@ -21,12 +21,12 @@ public class BreathingActivity : Activity
             Console.Clear();
             if (breath)
             {
-                Console.Write("Breath in  ");
+                Console.Write("Breath in... ");
                 breath = false;
             }
             else
             {
-                Console.Write("Breath Out  ");
+                Console.Write("Breath Out... ");
                 breath = true;
             }
             ShowCountDown(5);
