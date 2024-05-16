@@ -5,7 +5,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        int userChoice;
+        string userChoice;
         int[] activities = [0,0,0];
 
         do
@@ -17,27 +17,27 @@ class Program
             Console.WriteLine("4. Display what activities have been done");
             Console.WriteLine("5. Quit");
             Console.Write("Select a choice from the options: ");
-            userChoice = int.Parse(Console.ReadLine());
+            userChoice = Console.ReadLine();
 
-            if (userChoice == 1)
+            if (userChoice == "1")
             {
                 BreathingActivity breathingActivity = new BreathingActivity();
                 breathingActivity.Run();
                 activities[0]++;
             }
-            else if (userChoice == 2)
+            else if (userChoice == "2")
             {
                 ReflectingActivity reflectingActivity = new ReflectingActivity();
                 reflectingActivity.Run();
                 activities[1]++;
             }
-            else if (userChoice == 3)
+            else if (userChoice == "3")
             {
                 ListingActivity listingActivity = new ListingActivity();
                 listingActivity.Run();
                 activities[2]++;   
             }
-            else if (userChoice == 4)
+            else if (userChoice == "4")
             {
                 Console.Clear();
                 Console.WriteLine($"You have compleated the Breathing Activity {activities[0]} time/s.");
@@ -47,6 +47,6 @@ class Program
                 Console.ReadLine();
                 Console.Clear();
             }
-        } while (userChoice != 5);
+        } while (userChoice != "5");
     }
 }
