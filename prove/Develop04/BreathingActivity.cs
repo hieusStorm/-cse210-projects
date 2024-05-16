@@ -15,7 +15,7 @@ public class BreathingActivity : Activity
         DateTime futureTime = startTime.AddSeconds(GetDuration());
         DateTime currentTime = DateTime.Now;
         bool breath = true;
-        
+
         do
         {
             Console.Clear();
@@ -31,8 +31,7 @@ public class BreathingActivity : Activity
             }
             ShowCountDown(5);
             Console.Clear();
-        }
-        while (DateTime.Now < futureTime);
+        } while (DateTime.Now < futureTime);
 
         DisplayEndingMessage();
     }
