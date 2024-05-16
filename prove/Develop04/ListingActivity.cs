@@ -1,4 +1,4 @@
-public class ListingActivity
+public class ListingActivity : Activity
 {
     //attributes
     private int _count;
@@ -6,6 +6,6 @@ public class ListingActivity
     
     //methods
     public void Run() { }
-    public string GetRandomPrompt() { }
-    public List<string> GetListFromUser() { }
+    // public string GetRandomPrompt() { }
+    // public List<string> GetListFromUser() { }
 }
