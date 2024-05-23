@@ -30,13 +30,16 @@ public abstract class Goal
     }
 
     //getters
-    public string GetName() {
+    public string GetName()
+    {
         return _shortName;
     }
-    protected string GetDescription() {
+    protected string GetDescription()
+    {
         return _description;
     }
-    protected int GetPoints() {
+    protected int GetPoints()
+    {
         return _points;
     }
 }
