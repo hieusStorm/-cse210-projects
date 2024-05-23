@@ -9,7 +9,6 @@ public class GoalManager
         string playerChoice;
         do
         {
-            Console.Clear();
             DisplayPlayerInfo();
 
             Console.WriteLine($"Menu Options");
@@ -53,11 +52,14 @@ public class GoalManager
     public void ListGoalNames()
     {
         int i = 0;
-        Console.WriteLine("The Goals are: ");
+
+        Console.Clear();
+        Console.WriteLine("The Goals are:");
+
         foreach (Goal goal in _goals)
         {
             i++;
-            Console.WriteLine($"{i}. {goal.GetName()}");
+            Console.WriteLine($"{i}. {goal.GetDetailsString()}");
         }
     }
     public void CreateGoal()
@@ -107,13 +109,34 @@ public class GoalManager
     public void RecordEvent()
     {
         Console.Clear();
-        ListGoalNames();
+
+        int i = 0;
+        Console.WriteLine("The Goals are: ");
+        foreach (Goal goal in _goals)
+        {
+            i++;
+            Console.WriteLine($"{i}. {goal.GetName()}");
+        }
+
         Console.Write("Which Goal have you accomplished? ");
 
         int goalAccomplished = int.Parse(Console.ReadLine());
         int pointsGained = _goals[goalAccomplished - 1].RecordEvent();
         _score = _score + pointsGained;
     }
-    public void SaveGoals() { }
+    public void SaveGoals()
+    {
+        string fileName;
+        Console.WriteLine("Please provide a name for your goals: ");
+        fileName = $"{Console.ReadLine()}.txt";
+        using (StreamWriter goalFile = new StreamWriter(fileName))
+        {
+            goalFile.WriteLine(_score);
+            foreach (Goal goal in _goals)
+            {
+                goalFile.WriteLine(goal.GetStringRepresentation());
+            }
+        }
+    }
     public void LoadGoals() { }
 }
