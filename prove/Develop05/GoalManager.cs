@@ -46,7 +46,7 @@ public class GoalManager
     }
     public void DisplayPlayerInfo()
     {
-        Console.WriteLine($"You have ${_score} points.");
+        Console.WriteLine($"You have {_score} points.");
         Console.WriteLine();
     }
     public void ListGoalNames()
