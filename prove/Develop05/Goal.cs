@@ -17,7 +17,26 @@ public abstract class Goal
     public abstract string GetStringRepresentation();
     public virtual string GetDetailsString()
     {
-        return "hi";
+        string detailsString;
+        if (IsComplete())
+        {
+            detailsString = $"[X] {_shortName} ({_description})";
+        }
+        else
+        {
+            detailsString = $"[] {_shortName} ({_description})";
+        }
+        return detailsString;
     }
 
+    //getters
+    protected string GetName() {
+        return _shortName;
+    }
+    protected string GetDescription() {
+        return _description;
+    }
+    protected int GetPoints() {
+        return _points;
+    }
 }
