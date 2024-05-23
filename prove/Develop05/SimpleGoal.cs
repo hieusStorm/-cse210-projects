@@ -12,7 +12,6 @@ public class SimpleGoal : Goal
     {
         _isComplete = true;
         return GetPoints();
-
     }
     public override bool IsComplete()
     {
