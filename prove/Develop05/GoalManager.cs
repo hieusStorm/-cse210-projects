@@ -130,7 +130,7 @@ public class GoalManager
 
         int goalAccomplished = int.Parse(Console.ReadLine());
 
-        if (_goals[goalAccomplished - 1].IsComplete())
+        if (!_goals[goalAccomplished - 1].IsComplete())
         {
             int pointsGained = _goals[goalAccomplished - 1].RecordEvent();
             _score = _score + pointsGained;
