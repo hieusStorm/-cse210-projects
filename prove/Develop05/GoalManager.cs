@@ -80,7 +80,8 @@ public class GoalManager
 
         Console.Write("What type of goal would you like to make? ");
         goalType = Console.ReadLine();
-        Console.Write("\n What is the name of your goal? ");
+        Console.WriteLine();
+        Console.Write("What is the name of your goal? ");
         goalName = Console.ReadLine();
         Console.WriteLine("Please provide a description of your goal?");
         goalDescription = Console.ReadLine();
@@ -101,9 +102,9 @@ public class GoalManager
         {
             int goalTarget;
             int goalBonus;
-            Console.Write("\n How many types do you want to complete this goal");
+            Console.Write("How many times do you want to complete this goal? ");
             goalTarget = int.Parse(Console.ReadLine());
-            Console.Write($"\n What is the bonus for completing this goal {goalTarget} times? ");
+            Console.Write($"What is the bonus for completing this goal {goalTarget} times? ");
             goalBonus = int.Parse(Console.ReadLine());
 
             newGoal = new ChecklistGoal(goalName, goalDescription, goalPoints, goalTarget, goalBonus);
