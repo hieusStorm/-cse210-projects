@@ -18,7 +18,14 @@ public class ChecklistGoal : Goal
     }
     public override bool IsComplete()
     {
-        throw new NotImplementedException();
+        if (_amountCompleted / _target == 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
     public override string GetDetailsString()
     {
