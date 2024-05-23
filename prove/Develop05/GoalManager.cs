@@ -9,9 +9,10 @@ public class GoalManager
         string playerChoice;
         do
         {
+            Console.WriteLine();
             DisplayPlayerInfo();
 
-            Console.WriteLine($"Menu Options");
+            Console.WriteLine("Menu Options");
             Console.WriteLine("1. Create New Goal");
             Console.WriteLine("2. List Goals");
             Console.WriteLine("3. Save Goals");
