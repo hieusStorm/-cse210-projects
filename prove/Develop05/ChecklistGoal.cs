@@ -34,7 +34,7 @@ public class ChecklistGoal : Goal
     }
     public override bool IsComplete()
     {
-        if (_amountCompleted / _target == 0)
+        if (_amountCompleted == _target)
         {
             return true;
         }
