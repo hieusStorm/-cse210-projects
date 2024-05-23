@@ -126,9 +126,12 @@ public class GoalManager
     }
     public void SaveGoals()
     {
+        Console.Clear();
+
         string fileName;
-        Console.WriteLine("Please provide a name for your goals: ");
+        Console.Write("Please provide a name for your goals: ");
         fileName = $"{Console.ReadLine()}.txt";
+
         using (StreamWriter goalFile = new StreamWriter(fileName))
         {
             goalFile.WriteLine(_score);
@@ -138,5 +141,36 @@ public class GoalManager
             }
         }
     }
-    public void LoadGoals() { }
+    public void LoadGoals()
+    {
+        Console.Clear();
+        string fileName;
+
+        Console.Write("What is the name of your goals file(exclude the file type)? ");
+        fileName = $"{Console.ReadLine()}.txt";
+
+        string[] goals = System.IO.File.ReadAllLines(fileName);
+
+        _score = int.Parse(goals[0]);
+
+        for (int i = 1; i < goals.Length; i++)
+        {
+            string[] goal = goals[i].Split(":");
+            string goalType = goal[0];
+            string[] goalInfo = goal[1].Split(",");
+            if (goalType == "SimpleGoal")
+            {
+                _goals.Add(new SimpleGoal(goalInfo[0], goalInfo[1], int.Parse(goalInfo[2]), bool.Parse(goalInfo[3])));
+            }
+            else if (goalType == "EternalGoal")
+            {
+                _goals.Add(new EternalGoal(goalInfo[0], goalInfo[1], int.Parse(goalInfo[2])));
+            }
+            else if (goalType == "ChecklistGoal")
+            {
+                _goals.Add(new ChecklistGoal(goalInfo[0], goalInfo[1], int.Parse(goalInfo[2]), int.Parse(goalInfo[3]), int.Parse(goalInfo[4]), int.Parse(goalInfo[5])));
+            }
+        }
+
+    }
 }
