@@ -129,8 +129,12 @@ public class GoalManager
         Console.Write("Which Goal have you accomplished? ");
 
         int goalAccomplished = int.Parse(Console.ReadLine());
-        int pointsGained = _goals[goalAccomplished - 1].RecordEvent();
-        _score = _score + pointsGained;
+
+        if (_goals[goalAccomplished - 1].IsComplete())
+        {
+            int pointsGained = _goals[goalAccomplished - 1].RecordEvent();
+            _score = _score + pointsGained;
+        }
 
         if (_score / _level >= 100)
         {
