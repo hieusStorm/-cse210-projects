@@ -9,10 +9,10 @@ public class EternalGoal : Goal
     }
     public override bool IsComplete()
     {
-        throw new NotImplementedException();
+        return false;
     }
     public override string GetStringRepresentation()
     {
-        throw new NotImplementedException();
+        return $"EternalGoal:{GetName()},{GetDescription()},{GetPoints}";
     }
 }
