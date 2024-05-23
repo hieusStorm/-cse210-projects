@@ -3,6 +3,7 @@ public class GoalManager
     // attributes
     private List<Goal> _goals = new List<Goal>();
     private int _score = 0;
+    private int _level = 1;
     //methods
     public void Start()
     {
@@ -47,6 +48,7 @@ public class GoalManager
     }
     public void DisplayPlayerInfo()
     {
+        Console.WriteLine($"You are level {_level}.");
         Console.WriteLine($"You have {_score} points.");
         Console.WriteLine();
     }
@@ -129,6 +131,12 @@ public class GoalManager
         int goalAccomplished = int.Parse(Console.ReadLine());
         int pointsGained = _goals[goalAccomplished - 1].RecordEvent();
         _score = _score + pointsGained;
+
+        if (_score / _level >= 100)
+        {
+            _level++;
+            Console.WriteLine($"Congratulations! You leveled up! You are now level {_level}");
+        }
     }
     public void SaveGoals()
     {
