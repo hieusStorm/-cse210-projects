@@ -14,7 +14,17 @@ public class ChecklistGoal : Goal
     // methods
     public override int RecordEvent()
     {
-        throw new NotImplementedException();
+        _amountCompleted++;
+        if (_amountCompleted / _target == 0)
+        {
+            Console.WriteLine($"Congratulations! You have earned {GetPoints()} points and a bonus {_bonus} points.");
+            return GetPoints() + _bonus;
+        }
+        else
+        {
+            Console.WriteLine($"Congratulations! You have earned {GetPoints()} points.");
+            return GetPoints();
+        }
     }
     public override bool IsComplete()
     {

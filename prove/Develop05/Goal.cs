@@ -30,7 +30,7 @@ public abstract class Goal
     }
 
     //getters
-    protected string GetName() {
+    public string GetName() {
         return _shortName;
     }
     protected string GetDescription() {

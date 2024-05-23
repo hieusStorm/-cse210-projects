@@ -11,6 +11,7 @@ public class SimpleGoal : Goal
     public override int RecordEvent()
     {
         _isComplete = true;
+        Console.WriteLine($"Congratulations! You earned {GetPoints()} points!");
         return GetPoints();
     }
     public override bool IsComplete()

@@ -5,7 +5,8 @@ public class EternalGoal : Goal
     // methods
     public override int RecordEvent()
     {
-        throw new NotImplementedException();
+        Console.WriteLine($"Congratulations! You have earned {GetPoints()} points");
+        return GetPoints();
     }
     public override bool IsComplete()
     {
