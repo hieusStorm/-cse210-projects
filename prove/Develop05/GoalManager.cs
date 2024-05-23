@@ -89,10 +89,12 @@ public class GoalManager
         if (goalType == "1")
         {
             newGoal = new SimpleGoal(goalName, goalDescription, goalPoints);
+            _goals.Add(newGoal);
         }
         else if (goalType == "2")
         {
             newGoal = new EternalGoal(goalName, goalDescription, goalPoints);
+            _goals.Add(newGoal);
         }
         else if (goalType == "3")
         {
@@ -104,7 +106,9 @@ public class GoalManager
             goalBonus = int.Parse(Console.ReadLine());
 
             newGoal = new ChecklistGoal(goalName, goalDescription, goalPoints, goalTarget, goalBonus);
+            _goals.Add(newGoal);
         }
+
     }
     public void RecordEvent()
     {
