@@ -3,7 +3,7 @@ public class EternalGoal : Goal
     // constructor
     public EternalGoal(string name, string description, int points) : base(name, description, points) { }
     // methods
-    public override void RecordEvent()
+    public override int RecordEvent()
     {
         throw new NotImplementedException();
     }

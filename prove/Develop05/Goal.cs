@@ -12,7 +12,7 @@ public abstract class Goal
         _points = points;
     }
     //methods
-    public abstract void RecordEvent();
+    public abstract int RecordEvent();
     public abstract bool IsComplete();
     public abstract string GetStringRepresentation();
     public virtual string GetDetailsString()

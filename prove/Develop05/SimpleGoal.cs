@@ -8,9 +8,11 @@ public class SimpleGoal : Goal
         _isComplete = false;
     }
     //methods
-    public override void RecordEvent()
+    public override int RecordEvent()
     {
-        throw new NotImplementedException();
+        _isComplete = true;
+        return GetPoints();
+
     }
     public override bool IsComplete()
     {

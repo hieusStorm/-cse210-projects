@@ -12,7 +12,7 @@ public class ChecklistGoal : Goal
         _bonus = bonus;
     }
     // methods
-    public override void RecordEvent()
+    public override int RecordEvent()
     {
         throw new NotImplementedException();
     }
