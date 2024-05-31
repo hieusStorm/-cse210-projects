@@ -26,7 +26,7 @@ public class Product
     //methods
     public double TotalCost()
     {
-        return 0;
+        return _price * _quantity;
     }
     public string GetName()
     {
@@ -35,9 +35,5 @@ public class Product
     public int GetId()
     {
         return _id;
-    }
-    public int GetQuantity()
-    {
-        return _quantity;
     }
 }

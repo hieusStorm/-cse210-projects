@@ -17,7 +17,17 @@ public class Address
     //methods
     public bool IsUSA()
     {
-        return true;
+        if (_country == "USA")
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
-    public void Display() { }
+    public string Display()
+    {
+        return $"{_streetAddress}, {_city}, {_state} {_country}";
+    }
 }

@@ -13,8 +13,34 @@ public class Order
     //methods
     public double CalculatePrice()
     {
-        return 0.00;
+        double totalPrice = 0;
+
+        foreach (Product product in _products)
+        {
+            totalPrice = totalPrice + product.TotalCost();
+        }
+
+        if (_customer.IsUSA())
+        {
+            totalPrice = totalPrice + 5;
+        }
+        else
+        {
+            totalPrice = totalPrice + 35;
+        }
+        return totalPrice;
     }
-    public void ShippingLabel() { }
-    public void PackingLabel() { }
+    public string ShippingLabel()
+    {
+        return $"{_customer.GetName()}, \n {_customer.GetAddress()}";
+    }
+    public string PackingLabel()
+    {
+        string packingLabel = "";
+        foreach (Product product in _products)
+        {
+            packingLabel = packingLabel + $"Product Name: {product.GetName()} \n Product ID: {product.GetId()} \n";
+        }
+        return packingLabel;
+    }
 }

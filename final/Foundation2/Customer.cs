@@ -11,8 +11,24 @@ public class Customer
     }
 
     //methods
-    public string Region()
+    public string GetName()
     {
-        return "";
+        return _name;
+    }
+    public string GetAddress()
+    {
+        return _address.Display();
+    }
+    public bool IsUSA()
+    {
+        if (_address.IsUSA())
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+
     }
 }
