@@ -12,6 +12,7 @@ public class Comment
 
     //method
     public void Display() {
-
+        Console.WriteLine($"Comment Author: {_author}");
+        Console.WriteLine($"Comment: {_text}");
     }
 }
