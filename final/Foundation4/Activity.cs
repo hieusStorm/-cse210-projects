@@ -25,12 +25,14 @@ public class Activity
         return 0;
     }
 
-    public string GetSummary() { 
+    public string GetSummary()
+    {
         return $"{_date}({_length}min) - Distance {Distance()} Miles, Speed {Speed()} MPH, Pace: {Pace()} min per mile";
     }
 
     //protected methods
-    protected double GetLength() {
+    protected double GetLength()
+    {
         return _length;
     }
 }
