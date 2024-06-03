@@ -19,15 +19,17 @@ public abstract class Event
         _type = type;
     }
 
-    public void StandardDetails() { 
+    public void StandardDetails()
+    {
         Console.WriteLine($"{_title}");
-         Console.WriteLine($"{_date}, {_time}");
+        Console.WriteLine($"{_date}, {_time}");
         Console.WriteLine($"{_description}");
         _address.Display();
     }
     public abstract void FullDetails();
 
-    public void ShortDescription() { 
+    public void ShortDescription()
+    {
         Console.WriteLine($"{_type}: {_title}, {_date}");
     }
 }
