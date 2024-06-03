@@ -9,6 +9,7 @@ public class Reception : Event
 
     public override void FullDetails()
     {
-        throw new NotImplementedException();
+        StandardDetails();
+        Console.WriteLine($"RSVP at: {_rsvpEmail}");
     }
 }

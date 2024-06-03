@@ -11,6 +11,8 @@ public class Lecture : Event
 
     public override void FullDetails()
     {
-        throw new NotImplementedException();
+        StandardDetails();
+        Console.WriteLine($"Speaking: {_speaker}");
+        Console.WriteLine($"Max Capacity: {_maxCapacity}");
     }
 }

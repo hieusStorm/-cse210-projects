@@ -9,6 +9,7 @@ public class Outdoor : Event
 
     public override void FullDetails()
     {
-        throw new NotImplementedException();
+        StandardDetails();
+        Console.WriteLine($"Expected Weather: {_weather}");
     }
 }

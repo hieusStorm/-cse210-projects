@@ -15,5 +15,7 @@ public class Address
     }
 
     //methods
-    public void Display() { }
+    public void Display() { 
+        Console.WriteLine($"{_streetAddress} {_city}, {_state} {_country}");
+    }
 }
