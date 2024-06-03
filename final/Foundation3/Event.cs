@@ -20,7 +20,9 @@ public abstract class Event
     }
 
     public void StandardDetails() { 
-        Console.WriteLine($"{_title}, {_description}, {_date}, {_time}");
+        Console.WriteLine($"{_title}");
+         Console.WriteLine($"{_date}, {_time}");
+        Console.WriteLine($"{_description}");
         _address.Display();
     }
     public abstract void FullDetails();
